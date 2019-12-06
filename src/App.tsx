@@ -11,7 +11,7 @@ const App: React.FC = () => {
       <header>
       </header>
       <section>
-        <SLDropDown options={drinks} placeholder={placeholder} text={value} itemsVisible={3}/>        
+        <SLDropDown options={drinks} placeholder={placeholder} text={value} itemsVisible={5} onChange={(option :string) => console.log(option)} />        
       </section>
     </div>
   );

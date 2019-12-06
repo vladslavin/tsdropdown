@@ -5,10 +5,11 @@ type SLDropDownProps = {
   options?: Array<string>,
   text?: string,
   placeholder?: string,
-  itemsVisible?: number
+  itemsVisible?: number,
+  onChange?: (option: string) => void
 }
 
-const SLDropDown: React.FC<SLDropDownProps> = ({options, text, placeholder, itemsVisible = 5}) => {
+const SLDropDown: React.FC<SLDropDownProps> = ({options, text, placeholder, itemsVisible = 5, onChange}) => {
   const containerRef = useRef(null);
   const defaultPlaceholder: string = placeholder || 'Pick something';
   const defaultOptions : Array<string> = options || [];
@@ -50,6 +51,9 @@ const SLDropDown: React.FC<SLDropDownProps> = ({options, text, placeholder, item
     const target: HTMLLIElement = event.target as HTMLLIElement;
     const value: string = target.textContent!;
     setInputValue(value);
+    if (onChange) {
+      onChange(value); 
+    }
     setDropAreaVisible(false);
   }
   const inputClick = (event: MouseEvent): void => setDropAreaVisible(defaultOptions.length > 0);
