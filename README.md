@@ -1,3 +1,15 @@
+## Simple custom drop down menu, written in TS. 
+
+CD builds it to the following address: https://ddl.azurewebsites.net
+
+It has the following functionality:
+* super simple search functionality
+* onChange event, passed as a prop
+* initial values passed as props
+* variable hight with native browser scrolling
+
+--
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
