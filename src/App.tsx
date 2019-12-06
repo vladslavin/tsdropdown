@@ -1,24 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import SLDropDown from './components/SLDropDown';
 
 const App: React.FC = () => {
+  const drinks : Array<string> = ['Beer', 'Beherovka', 'Vodka', 'Vino', 'Wine'];
+  const placeholder = 'Pick a drink';
+  const value = drinks[0];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
       </header>
+      <section>
+        <SLDropDown options={drinks} placeholder={placeholder} text={value} itemsVisible={3}/>        
+      </section>
     </div>
   );
 }
